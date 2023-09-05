@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import NewsComponent from "./NewsComponent"
+import '../Styles/API.css'
 
 export default function API(){
 
@@ -6,7 +8,7 @@ export default function API(){
 
 
     useEffect(()=>{
-        fetch('http://api.mediastack.com/v1/news?access_key=9062d7ec08b53d8893c65680f9d7ad5b&keywords=tennis')
+        fetch('/api?access_key=9062d7ec08b53d8893c65680f9d7ad5b') //proxy server endpoint
         .then((result) => {
             if(!result.ok){
                 throw new Error(`Network response was not ok, status: ${result.status}`)
@@ -22,13 +24,15 @@ export default function API(){
     
     
     return(
-        <div>
-            {newsData !== null && newsData.data.map((item, index) => (
-                <div key={index}>
-                    <h1>{item.author}</h1>
-                    <h2>{item.title}</h2>
-                </div>
-            ))}
+        <div className="api-container">
+            {newsData ? newsData.data.map((item, index) => (
+                <NewsComponent key={index} item={item}/>
+            ))
+            :
+            (
+                <h1>Loading..</h1>
+            )}
+            
         </div>
     )
 }

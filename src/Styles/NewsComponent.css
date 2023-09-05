@@ -1,0 +1,10 @@
+.news-container{
+    background-color: rgb(209, 209, 209);
+    color: rgb(68, 68, 68);
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.news-title{
+    font-size: 23px;
+}
