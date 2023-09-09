@@ -5,14 +5,15 @@ import '../Styles/API.css'
 export default function API(){
 
     const [newsData, setNewsData] = useState(null)
-
+    
 
     useEffect(()=>{
-        fetch('/api?access_key=9062d7ec08b53d8893c65680f9d7ad5b') //proxy server endpoint
+        fetch('http://api.mediastack.com/?access_key=9062d7ec08b53d8893c65680f9d7ad5b',{method: "GET", mode: "no-cors", headers: {     "Content-Type": "application/json"   }, credentials: "include",}) //proxy server endpoint
         .then((result) => {
             if(!result.ok){
                 throw new Error(`Network response was not ok, status: ${result.status}`)
             }
+            console.log(result)
             return result.json()
             
         })
