@@ -1,5 +1,5 @@
 import { useNewsData } from "../Provider/NewsDataContext"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Content from "./Content"
 
 export default function SearchBar(){
@@ -7,6 +7,11 @@ export default function SearchBar(){
     const newsData = useNewsData()
     const[news, setNews] = useState(null)
     const inputRef = useRef()
+
+
+    useEffect(()=>{
+        setNews(newsData)
+    },[newsData])
 
 
     const handleClick = () => {
@@ -17,10 +22,6 @@ export default function SearchBar(){
 
         setNews(filteredNews)
     }
-
-
-    console.log(news)
-
 
     return(
         <div>
