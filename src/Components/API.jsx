@@ -8,12 +8,13 @@ export default function API(){
     
 
     useEffect(()=>{
-        fetch('http://api.mediastack.com/?access_key=9062d7ec08b53d8893c65680f9d7ad5b',{method: "GET", mode: "no-cors", headers: {     "Content-Type": "application/json"   }, credentials: "include",}) //proxy server endpoint
+        fetch('https://64fdc429596493f7af7e896d.mockapi.io/news', {
+            method: 'GET',
+            headers: {'content-type':'application/json'}})
         .then((result) => {
             if(!result.ok){
                 throw new Error(`Network response was not ok, status: ${result.status}`)
             }
-            console.log(result)
             return result.json()
             
         })
@@ -26,7 +27,7 @@ export default function API(){
     
     return(
         <div className="api-container">
-            {newsData ? newsData.data.map((item, index) => (
+            {newsData ? newsData.map((item, index) => (
                 <NewsComponent key={index} item={item}/>
             ))
             :
