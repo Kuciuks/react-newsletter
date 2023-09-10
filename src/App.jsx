@@ -8,9 +8,8 @@ import SearchBar from './Components/SearchBar.jsx'
 function App() {
     return(
         <NewsDataProvider>
-            <SearchBar/>
             <Routes>    
-                <Route exact path='/' Component={Content}/>
+                <Route exact path='/' Component={SearchBar}/>
                 <Route path='news/:id' Component={NewsArticle}/>
             </Routes>
         </NewsDataProvider>
