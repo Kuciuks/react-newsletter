@@ -1,13 +1,13 @@
 import NewsComponent from "./NewsComponent"
-import '../Styles/API.css'
+import '../Styles/Content.css'
 import { useNewsData } from "../Provider/NewsDataContext"
 
-export default function API(){
+export default function Content(){
 
     const newsData = useNewsData()
     
     return(
-        <div className="api-container">
+        <div className="content-container">
             {newsData ? newsData.map((item, index) => (
                 <NewsComponent key={index} item={item}/>
             ))

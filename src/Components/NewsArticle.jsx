@@ -15,6 +15,7 @@ export default function NewsArticle(){
             <h3>{article.article}</h3>
             <h4>{article.author}</h4>
             <h3>{article.time}</h3>
+            <img src={article.image}/>
         </div>
     )
 }
