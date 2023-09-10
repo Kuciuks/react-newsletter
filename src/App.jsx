@@ -1,11 +1,14 @@
 import './Styles/App.css'
-import API from './Components/API.jsx'
+import {Route, Routes} from 'react-router-dom'
+import NewsArticle from "./Components/NewsArticle.jsx"
+import API from './Components/API'
 
 function App() {
     return(
-        <div className='app-container'>
-            <API/>
-        </div>
+        <Routes>    
+            <Route exact path='/' Component={API}/>
+            <Route path='news/:id' Component={NewsArticle}/>
+        </Routes>
     )
 }
 

@@ -22,8 +22,6 @@ export default function API(){
         .catch(error => console.log(error))
     },[])
 
-    console.log(newsData)
-    
     
     return(
         <div className="api-container">
