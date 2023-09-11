@@ -5,16 +5,29 @@ export default function NewsUpload(){
     const {register, handleSubmit, formState:{errors}} = useForm()
 
     const handleUpload = async (form)=>{
-        const copy = {
-            ...form,
-            id: crypto.randomUUID()
+        try{
+            const copy = {
+                ...form,
+                id: crypto.randomUUID()
+            }
+    
+    
+            const response = await fetch(`https://64fdc429596493f7af7e896d.mockapi.io/news`,{
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(copy)
+            })
+    
+            response.ok ? console.log("Data successfully sent to the API")
+            :
+            console.error("Error sending data to the API")
+            
         }
-
-
-        const response = await fetch("")
-
-
-
+        catch(error){
+            console.error("Error: ",error)
+        }
     }
 
     return(
@@ -57,8 +70,8 @@ export default function NewsUpload(){
             <p>{errors.article?.message}</p>
 
 
-            <label htmlFor='picture'>Upload picture</label>
-            <input type='file' {...register("file",{
+            <label htmlFor='image'>Upload picture</label>
+            <input id="image" type='file' {...register("image",{
                 required: "Required field!"
             })}/>
             <p>{errors.file?.message}</p>
