@@ -1,6 +1,8 @@
 import { useNewsData } from "../Provider/NewsDataContext"
 import { useEffect, useRef, useState } from "react"
 import Content from "./Content"
+import '../Styles/SearchBar.css'
+import { Link } from "react-router-dom"
 
 export default function SearchBar(){
 
@@ -24,9 +26,12 @@ export default function SearchBar(){
     }
 
     return(
-        <div>
-            <input ref={inputRef} placeholder="Search articles by author"></input>
-            <button onClick={handleClick}>Search</button>
+        <div className="search-container">
+            <div className="bar-container">
+                <input className="input-field" ref={inputRef} placeholder="Search articles by author"></input>
+                <button className="btn" onClick={handleClick}>Search</button>
+                <Link to='/news/upload'>Upload</Link>
+            </div>
             <Content newsList={news}/>
         </div>
     )

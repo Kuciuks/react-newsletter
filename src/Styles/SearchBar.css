@@ -1,0 +1,25 @@
+.bar-container{
+    display: flex;
+    justify-content: center;
+}
+
+.input-field{
+    width: 60%;
+    height: 30px;
+    border: none;
+    padding: 0px;
+    background-color: antiquewhite;
+    padding-left: 10px;
+}
+
+.input-field:focus{
+    border: none
+}
+
+
+.btn{
+    width: 10%;
+    height: 30px;
+    border: none;
+    padding: 0px;
+}
