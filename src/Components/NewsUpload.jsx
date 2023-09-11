@@ -8,12 +8,15 @@ export default function NewsUpload(){
         try{
             const copy = {
                 ...form,
-                id: crypto.randomUUID()
+                id: crypto.randomUUID(),
+                time: Date.now(),
+                imgPlaceholder: "Yomama",
+                image: "Yomama2"
             }
-    
+            // console.log(JSON.stringify(copy))
     
             const response = await fetch(`https://64fdc429596493f7af7e896d.mockapi.io/news`,{
-                method: 'PUT',
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -69,12 +72,12 @@ export default function NewsUpload(){
             })}/>
             <p>{errors.article?.message}</p>
 
-
+{/* 
             <label htmlFor='image'>Upload picture</label>
             <input id="image" type='file' {...register("image",{
                 required: "Required field!"
             })}/>
-            <p>{errors.file?.message}</p>
+            <p>{errors.file?.message}</p> */}
 
             <button type='submit'>Submit</button>
         </form>
