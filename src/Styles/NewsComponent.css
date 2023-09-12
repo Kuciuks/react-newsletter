@@ -1,5 +1,5 @@
 .news-container{
-    background-color: rgb(209, 209, 209);
+    background-color: rgb(199, 137, 137);
     color: rgb(68, 68, 68);
     margin: 10px;
     border-radius: 5px;
@@ -7,4 +7,9 @@
 
 .news-title{
     font-size: 23px;
+    overflow: hidden;
+}
+
+.news-author{
+    overflow: hidden;
 }

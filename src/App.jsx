@@ -7,13 +7,15 @@ import SearchBar from './Components/SearchBar.jsx'
 
 function App() {
     return(
-        <NewsDataProvider>
-            <Routes>    
-                <Route exact path='/' Component={SearchBar}/>
-                <Route path='news/:id' Component={NewsArticle}/>
-                <Route path='news/upload' Component={NewsUpload}/>
-            </Routes>
-        </NewsDataProvider>
+        <div className='app-container'>
+            <NewsDataProvider>
+                <Routes>    
+                    <Route exact path='/' Component={SearchBar}/>
+                    <Route path='news/:id' Component={NewsArticle}/>
+                    <Route path='news/upload' Component={NewsUpload}/>
+                </Routes>
+            </NewsDataProvider>
+        </div>
     )
 }
 
