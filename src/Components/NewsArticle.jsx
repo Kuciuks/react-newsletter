@@ -8,7 +8,7 @@ export default function NewsArticle(){
     if(!newsData) return <div>Loading...</div>
 
     const article = newsData.find((item) => item.id === id)
-    console.log(article)
+    //console.log(article)
     return(
         <div>
             <h1>{article.title}</h1>

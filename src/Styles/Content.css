@@ -1,5 +1,14 @@
 .content-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
+}
+
+@media only screen and (min-width:500px) {
+    .content-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
