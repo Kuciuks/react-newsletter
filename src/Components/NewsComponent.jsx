@@ -1,7 +1,7 @@
 import '../Styles/NewsComponent.css'
 import {Link} from 'react-router-dom'
 
-export default function NewsComponent({keyVal,item}){
+export default function NewsComponent({item}){
 
     const adjustTitle = (string) => {
         if(string.length > 20){
@@ -12,10 +12,13 @@ export default function NewsComponent({keyVal,item}){
         }   
     }
     return(
-        <div key={keyVal} className="news-container">
+        <div className="news-container">
             <Link to={`/news/${item.id}`} className='link-div'>
                 <div className='img-div'>
-                    <img className='img' src={item.placeholder_img + `?lock=1`} />
+                    <picture>
+                        <source srcSet={item.placeholder_img + `?lock=1`}/>
+                        <img className='img' src={item.placeholder_img + `?lock=1`} />
+                    </picture>
                 </div>
                 <div className='text-div'>
                     <div className='title-div'>

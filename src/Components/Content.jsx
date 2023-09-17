@@ -7,15 +7,20 @@ export default function Content({newsList}){
     
     return(
         <div className="content-container">
-            <FeaturedArticle/>
-            {newsList ? newsList.map((item, index) => (
-                <NewsComponent key={index} item={item}/>
-            ))
-            :
-            (
-                <h1>Loading..</h1>
-            )}
-            
+            <div className="featured-article-div">
+                <FeaturedArticle/>
+            </div>
+            <div className="other-articles-div">
+                {newsList ? newsList.map((item, index) => (
+                    <div className="article-div" key={index}>
+                        <NewsComponent item={item}/>
+                    </div>
+                ))
+                :
+                (
+                    <h1>Loading..</h1>
+                )}
+            </div>
         </div>
     )
 }
