@@ -1,7 +1,7 @@
-import '../Styles/NewsComponent.css'
+import '../Styles/Articles.css'
 import {Link} from 'react-router-dom'
 
-export default function NewsComponent({item}){
+export default function Articles({item}){
 
     const adjustTitle = (string) => {
         if(string.length > 20){

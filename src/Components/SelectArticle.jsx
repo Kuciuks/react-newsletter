@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useNewsData } from "../Provider/NewsDataContext";
 
-export default function NewsArticle(){
+export default function SelectArticle(){
     const {id} = useParams()
     const newsData = useNewsData()
 

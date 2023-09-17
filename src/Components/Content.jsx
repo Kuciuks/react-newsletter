@@ -1,5 +1,5 @@
-import NewsComponent from "./NewsComponent"
 import '../Styles/Content.css'
+import Articles from "./Articles"
 
 export default function Content({newsList}){
     return(
@@ -7,7 +7,7 @@ export default function Content({newsList}){
             <div className="articles-container">
                 {newsList ? newsList.map((item, index) => (
                     <div className="article-div" key={index}>
-                        <NewsComponent item={item}/>
+                        <Articles item={item}/>
                     </div>
                 ))
                 :
