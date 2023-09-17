@@ -9,6 +9,7 @@
 
 .link-div{
     height: 100%;
+    max-width: 37.4375rem;
     background-color: antiquewhite;
     display: flex;
     flex-direction: column;

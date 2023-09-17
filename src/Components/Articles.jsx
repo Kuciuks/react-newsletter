@@ -19,7 +19,7 @@ export default function Articles({item}){
         const windowWidth = window.innerWidth
 
         if(windowWidth < 600){ //add class 
-            for(let i = 3; i < articles.length; i++){
+            for(let i = 3; i < articles.length; i++){ //work on this part to only return 9 articles from the list
                 articles[i].classList.add('flex-layout')
             }    
         }else{
