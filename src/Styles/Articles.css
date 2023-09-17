@@ -8,6 +8,7 @@
 }
 
 .link-div{
+    height: 100%;
     background-color: antiquewhite;
     display: flex;
     flex-direction: column;
@@ -16,34 +17,30 @@
 
 
 .img{
-    width: 50px;
-}
-
-.flex-layout{
-    flex-direction: row;
-    justify-content: center;
+    width: 30px;
 }
 
 
+
+
+
+/* Text grid area styles */
 .text-container{
-    width: inherit;
-    padding: 10px;
     display: grid;
     grid-template-areas: '. title .' 'source . date';
 }
-
-.img-div{
-    width: inherit;
-}
-
 .title-div{
     grid-area: title;
 }
-
 .source-div{
     grid-area: source;
 }
-
 .date-div{
     grid-area: date;
+}
+
+/* Class for adjusting text area layout styles for select items */
+.flex-layout{
+    flex-direction: row;
+    justify-content: center;
 }

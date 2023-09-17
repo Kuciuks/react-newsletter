@@ -13,30 +13,43 @@ export default function Articles({item}){
     }
 
     
-    const articles = document.querySelectorAll('.link-div')
-    for(let i = 3; i < articles.length; i++){
-        articles[i].classList.add('flex-layout')
+
+    const handleResize = () => {
+        const articles = document.querySelectorAll('.link-div')
+        const windowWidth = window.innerWidth
+
+        if(windowWidth < 600){ //add class 
+            for(let i = 3; i < articles.length; i++){
+                articles[i].classList.add('flex-layout')
+            }    
+        }else{
+            for(let i = 3; i < articles.length; i++){
+                articles[i].classList.remove('flex-layout')
+            }    
+        }
+        
     }
+    window.addEventListener("resize", handleResize)
 
     return(
-            <Link to={`/news/${item.id}`} className='link-div'>
-                <div className='img-div'>
-                    <picture>
-                        <source srcSet={item.placeholder_img + `?lock=1`}/>
-                        <img className='img' src={item.placeholder_img + `?lock=1`} />
-                    </picture>
+        <Link to={`/news/${item.id}`} className='link-div'>
+            <div className='img-div'>
+                <picture>
+                    <source srcSet={item.placeholder_img + `?lock=1`}/>
+                    <img className='img' src={item.placeholder_img + `?lock=1`} />
+                </picture>
+            </div>
+            <div className='text-container'>
+                <div className='title-div'>
+                    <p className="title">{adjustTitle(item.title)}</p>
                 </div>
-                <div className='text-container'>
-                    <div className='title-div'>
-                        <p className="title">{adjustTitle(item.title)}</p>
-                    </div>
-                    <div className='source-div'>
-                        <p className="source">{item.source}</p>
-                    </div>
-                    <div className='date-div'>
-                        <p>date div area</p>
-                    </div>
+                <div className='source-div'>
+                    <p className="source">{item.source}</p>
                 </div>
-            </Link>
+                <div className='date-div'>
+                    <p>date div area</p>
+                </div>
+            </div>
+        </Link>
     )
 }
