@@ -11,8 +11,14 @@ export default function NewsComponent({item}){
             return string
         }   
     }
+
+    
+    const articles = document.querySelectorAll('.link-div')
+    for(let i = 3; i < articles.length; i++){
+        articles[i].classList.add('flex-layout')
+    }
+
     return(
-        <div className="news-container">
             <Link to={`/news/${item.id}`} className='link-div'>
                 <div className='img-div'>
                     <picture>
@@ -20,15 +26,17 @@ export default function NewsComponent({item}){
                         <img className='img' src={item.placeholder_img + `?lock=1`} />
                     </picture>
                 </div>
-                <div className='text-div'>
+                <div className='text-container'>
                     <div className='title-div'>
-                        <h1 className="title">{adjustTitle(item.title)}</h1>
+                        <p className="title">{adjustTitle(item.title)}</p>
                     </div>
-                    <div className='author-div'>
-                        <h2 className="author">-{item.author}</h2>
+                    <div className='source-div'>
+                        <p className="source">{item.source}</p>
+                    </div>
+                    <div className='date-div'>
+                        <p>date div area</p>
                     </div>
                 </div>
             </Link>
-        </div>
     )
 }
