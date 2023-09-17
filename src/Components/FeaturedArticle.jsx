@@ -1,4 +1,5 @@
 import placeholder from '../assets/placeholder.png'
+import '../Styles/FeaturedArticle.css'
 
 export default function FeaturedArticle(){
     return(
@@ -10,9 +11,15 @@ export default function FeaturedArticle(){
                 </picture>
             </div>
             <div className="featured-text-div">
-                <div className="title-div"></div>
-                <div className="source-div"></div>
-                <div className="date-div"></div>
+                <div className="title-div">
+                    <p>This is a title text area</p>
+                </div>
+                <div className="source-div">
+                    <p>source div area</p>
+                </div>
+                <div className="date-div">
+                    <p>date div area</p>
+                </div>
             </div>
         </div>
     )
