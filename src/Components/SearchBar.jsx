@@ -10,7 +10,6 @@ export default function SearchBar(){
     const[news, setNews] = useState(null)
     const inputRef = useRef()
 
-
     useEffect(()=>{
         setNews(newsData)
     },[newsData])

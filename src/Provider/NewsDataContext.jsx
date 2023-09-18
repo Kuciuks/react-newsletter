@@ -3,8 +3,7 @@ import { useContext, useState, useEffect, createContext } from "react";
 const NewsDataContext = createContext()
 
 export default function NewsDataProvider({children}) {
-    const [newsData, setNewsData] = useState()
-
+    const [newsData, setNewsData] = useState(null)
     useEffect(()=>{
         fetch('https://64fdc429596493f7af7e896d.mockapi.io/news', {
             method: 'GET',
