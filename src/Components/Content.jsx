@@ -15,6 +15,20 @@ export default function Content({newsList}){
                     <h1>Loading..</h1>
                 )}
             </div>
+
+            <div className='banner-container'>
+                    {/* Fetching banners from the API*/}
+            </div>
+
+            <div className='headlines-container'>
+                    {/* Fetching articles from the API similar to articles-container */}
+            </div>
+
+            <div className='headlines-container'>
+                    {/* Fetching articles from the API similar to articles-container */}
+            </div>
+
+            {/* other variations of newslist item layout/styling in a container */}
         </div>
     )
 }
