@@ -3,6 +3,11 @@
     padding: 16px;
 }
 
+.banner-container{
+    padding: 10px;
+}
+
+
 /* Article layout for screens < 500px (default)*/
 .articles-container{
     padding: 10px;

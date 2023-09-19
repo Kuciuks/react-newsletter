@@ -1,31 +1,40 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import '../Styles/Content.css'
 import Articles from "./Articles"
+import Banner from './Banner'
 
 export default function Content({newsList}){
 
-    const [dataList, setDataList] = useState(null) //store the array of articles in a state
-    let dataCopy = dataList != null ? [...dataList] : []
+    // const [dataList, setDataList] = useState(null) //store the array of articles in a state
+    const dataRef = useRef(null) // a ref for storing the list of articles (updating it does not cause a re-render)
 
-    useEffect(()=>{ // update the state whenever the newsList array changes
-        setDataList(newsList)
+    useEffect(()=>{ // update the state whenever the newslist array has data inside of it
+        dataRef.current = newsList;
     },[newsList])
+    // console.log(dataRef)
 
 
-
-    // console.log(dataList)
-    const handleDataRequest = (type) => {
-        console.log(dataCopy.length)
-        
+    const handleDataRequest = (type) => { // take a type of request
         let articleList = [];
 
-        switch(type){
+        switch(type){ // loop over the types of type requests
             case 'banner':
-            break;
+
+                articleList = dataRef.current.slice(0, 1)
+                dataRef.current = dataRef.current.slice(1)
+
+                return(
+                    articleList.map((item, index) => (
+                        <div className='banner-div' key={index}>
+                            <Banner item={item}/>
+                        </div>
+                    ))
+                )
 
             case 'article':
-                articleList = dataCopy.slice(0, 9);
-                dataCopy = dataCopy.slice(9)
+
+                articleList = dataRef.current.slice(0, 9);
+                dataRef.current = dataRef.current.slice(9)
 
                 return(
                     articleList.map((item, index) => (
@@ -48,11 +57,11 @@ export default function Content({newsList}){
     return(
         <div className="content-container">
             <div className="articles-container">
-                {dataList != null ? handleDataRequest("article") : <h1>Loading...</h1>}
+                {dataRef.current != null ? handleDataRequest("article") : <h1>Loading...</h1>}
             </div>
 
             <div className='banner-container'>
-                {dataList != null ? handleDataRequest("article") : <h1>Loading...</h1>}
+                {dataRef.current != null ? handleDataRequest("banner") : <h1>Loading...</h1>}
             </div>
 
             <div className='headlines-container'>
