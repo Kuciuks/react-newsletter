@@ -12,24 +12,6 @@ export default function Articles({item}){
         }   
     }
 
-    
-
-    // const handleResize = () => {
-    //     const articles = document.querySelectorAll('.link-div')
-    //     const windowWidth = window.innerWidth
-
-    //     if(windowWidth < 600){ //add class 
-    //         for(let i = 3; i < articles.length; i++){ //work on this part to only return 9 articles from the list
-    //             articles[i].classList.add('flex-layout')
-    //         }    
-    //     }else{
-    //         for(let i = 3; i < articles.length; i++){
-    //             articles[i].classList.remove('flex-layout')
-    //         }    
-    //     }
-        
-    // }
-    // window.addEventListener("resize", handleResize)
 
     return(
         <Link to={`/news/${item.id}`} className='link-div'>
