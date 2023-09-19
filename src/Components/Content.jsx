@@ -4,38 +4,35 @@ import Articles from "./Articles"
 
 export default function Content({newsList}){
 
-    const [dataList, setDataList] = useState(null)//store the array of articles in a state, will use for altering the valeu alter on
+    const [dataList, setDataList] = useState(null) //store the array of articles in a state
+    let dataCopy = dataList != null ? [...dataList] : []
 
-    useEffect(()=>{
+    useEffect(()=>{ // update the state whenever the newsList array changes
         setDataList(newsList)
     },[newsList])
 
 
+
+    // console.log(dataList)
     const handleDataRequest = (type) => {
-        let articleList = []
-        const newsListCopy = dataList
-        console.log(newsListCopy)
+        console.log(dataCopy.length)
         
+        let articleList = [];
+
         switch(type){
             case 'banner':
-                articleList = newsListCopy.slice(1)
-                setDataList(articleList)
-                // return( )
             break;
 
             case 'article':
-                articleList = newsListCopy.slice(9)
-                setDataList(articleList)
+                articleList = dataCopy.slice(0, 9);
+                dataCopy = dataCopy.slice(9)
+
                 return(
-                    articleList ? articleList.map((item, index) => (
+                    articleList.map((item, index) => (
                         <div className="article-div" key={index}>
                             <Articles item={item}/>
                         </div>
                     ))
-                    :
-                    (
-                        <h1>Loading..</h1>
-                    )
                 )
 
             case 'headlines':
@@ -51,21 +48,11 @@ export default function Content({newsList}){
     return(
         <div className="content-container">
             <div className="articles-container">
-                {/* {newsList ? newsList.map((item, index) => (
-                    <div className="article-div" key={index}>
-                        <Articles item={item}/>
-                    </div>
-                ))
-                :
-                (
-                    <h1>Loading..</h1>
-                )} */}
-                {newsList != null ? handleDataRequest('article'): <h1>Loading</h1>}
-
+                {dataList != null ? handleDataRequest("article") : <h1>Loading...</h1>}
             </div>
 
             <div className='banner-container'>
-                    {/* Fetching banners from the API*/}
+                {dataList != null ? handleDataRequest("article") : <h1>Loading...</h1>}
             </div>
 
             <div className='headlines-container'>
