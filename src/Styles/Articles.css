@@ -1,14 +1,23 @@
 
 .title{
     margin: 0px;
+    font-size: 2rem;
 }
-
 .author{
     margin: 0px;
+    font-size: 1.5rem;
+}
+.source{
+    font-size: 1.5rem;
+}
+.date{
+    font-size: 1.5rem;
 }
 
 .img{
-    width: 30px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -16,9 +25,8 @@
 .img-div{
     grid-area: img;
 }
-.text-container{
-    grid-area: text;
-}
+
+
 .link-div{
     height: 100%;
     max-width: 37.4375rem;
@@ -28,6 +36,8 @@
     grid-template-areas: 
     'img'
     'text';
+    /* display: flex;
+    flex-direction: column; */
 }
 .article-div:nth-child(n+4) .link-div{
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -39,17 +49,15 @@
 
 /* Text grid area styles */
 .text-container{
-    display: grid;
-    grid-template-areas: '. title .' 'source . date';
+    grid-area: text;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.title-div{
-    grid-area: title;
-}
-.source-div{
-    grid-area: source;
-}
-.date-div{
-    grid-area: date;
+.details-div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 

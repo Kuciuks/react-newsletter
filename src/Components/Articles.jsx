@@ -4,8 +4,8 @@ import {Link} from 'react-router-dom'
 export default function Articles({item}){
 
     const adjustTitle = (string) => {
-        if(string.length > 20){
-            let newString = string.slice(0,20)
+        if(string.length > 30){
+            let newString = string.slice(0,30)
             return newString
         }else{
             return string
@@ -25,11 +25,13 @@ export default function Articles({item}){
                 <div className='title-div'>
                     <p className="title">{adjustTitle(item.title)}</p>
                 </div>
-                <div className='source-div'>
-                    <p className="source">{item.source}</p>
-                </div>
-                <div className='date-div'>
-                    <p>date div area</p>
+                <div className='details-div'>
+                    <div className='source-div'>
+                        <p className="source">{item.source}</p>
+                    </div>
+                    <div className='date-div'>
+                        <p className='date'>date</p>
+                    </div>
                 </div>
             </div>
         </Link>
