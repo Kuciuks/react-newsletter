@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useNewsData } from "../Provider/NewsDataContext";
+import '../Styles/SelectArticle.css'
 
 export default function SelectArticle(){
     const {id} = useParams()
@@ -10,12 +11,26 @@ export default function SelectArticle(){
     const article = newsData.find((item) => item.id === id)
     //console.log(article)
     return(
-        <div>
-            <h1>{article.title}</h1>
-            <h3>{article.article}</h3>
-            <h4>{article.author}</h4>
-            <h3>{article.time}</h3>
-            <img src={article.image}/>
+        <div className="select-container">
+            <div className="select-image-container">
+                <picture>
+                    <source srcSet={article.placeholder_img + `?lock=1`}/>
+                    <img className="img" src={article.placeholder_img + `?lock=1`}/>
+                </picture>
+            </div>
+
+            <div className="select-title-container">
+                <h1>{article.title}</h1>
+            </div>
+
+            <div className="select-article-container">
+                <h3>{article.article}</h3>
+            </div>
+
+            <div className="select-data-container">
+                <h4>{article.source}</h4>
+                <h3>{article.time}</h3>
+            </div>
         </div>
     )
 }

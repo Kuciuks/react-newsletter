@@ -1,0 +1,34 @@
+.select-container{
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.select-image-container{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.select-title-container{
+    padding: 10px;
+}
+
+.select-article-container{
+    padding: 10px;
+}
+
+.select-data-container{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media only screen and (min-width:900px) {
+    .select-container{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
