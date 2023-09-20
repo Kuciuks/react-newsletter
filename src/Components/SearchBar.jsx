@@ -31,7 +31,7 @@ export default function SearchBar(){
                 <button className="btn" onClick={handleClick}>Search</button>
                 <Link to='/news/upload'>Upload</Link>
             </div>
-            <Content newsList={news}/>
+            {/* <Content newsList={news}/> call another component that renders the search results */}
         </div>
     )
 }

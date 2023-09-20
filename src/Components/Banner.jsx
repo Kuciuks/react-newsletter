@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import '../Styles/Banner.css'
 
 export default function Banner({item}){
-    console.log(item)
 
     return(
         <Link to={`/news/${item.id}`}>

@@ -2,17 +2,25 @@
 .title{
     margin: 0px;
     font-size: 2rem;
+    margin: 0 10px 0 10px;
 }
 .author{
     margin: 0px;
     font-size: 1.5rem;
 }
 .source{
+    margin: 15px 10px 15px 10px;
     font-size: 1.5rem;
 }
 .date{
+    margin: 15px 10px 15px 10px;
     font-size: 1.5rem;
 }
+
+
+
+
+
 
 .img{
     width: 100%;
@@ -36,8 +44,8 @@
     grid-template-areas: 
     'img'
     'text';
-    /* display: flex;
-    flex-direction: column; */
+    text-decoration: none;
+    color: black;
 }
 .article-div:nth-child(n+4) .link-div{
     grid-template-columns: repeat(2, minmax(0, 1fr));

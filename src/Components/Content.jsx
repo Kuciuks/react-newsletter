@@ -1,17 +1,22 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import '../Styles/Content.css'
 import Articles from "./Articles"
 import Banner from './Banner'
+import { useNewsData } from '../Provider/NewsDataContext';
 
-export default function Content({newsList}){
+export default function Content(){
 
-    // const [dataList, setDataList] = useState(null) //store the array of articles in a state
+    const newsData = useNewsData() // fetching news from the API
+
     const dataRef = useRef(null) // a ref for storing the list of articles (updating it does not cause a re-render)
+    const [data, setData] = useState(null)
 
     useEffect(()=>{ // update the state whenever the newslist array has data inside of it
-        dataRef.current = newsList;
-    },[newsList])
-    // console.log(dataRef)
+        setData(newsData)    
+        dataRef.current = newsData
+    },[newsData])
+    console.log(data)
+
 
 
     const handleDataRequest = (type) => { // take a type of request
@@ -57,11 +62,11 @@ export default function Content({newsList}){
     return(
         <div className="content-container">
             <div className="articles-container">
-                {dataRef.current != null ? handleDataRequest("article") : <h1>Loading...</h1>}
+                {data != null ? handleDataRequest("article") : <h1>Loading...</h1>}
             </div>
 
             <div className='banner-container'>
-                {dataRef.current != null ? handleDataRequest("banner") : <h1>Loading...</h1>}
+                {data != null ? handleDataRequest("banner") : <h1>Loading...</h1>}
             </div>
 
             <div className='headlines-container'>

@@ -27,7 +27,7 @@ export default function Articles({item}){
                 </div>
                 <div className='details-div'>
                     <div className='source-div'>
-                        <p className="source">{item.source}</p>
+                        <p className="source">-{item.source}</p>
                     </div>
                     <div className='date-div'>
                         <p className='date'>date</p>
