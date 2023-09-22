@@ -4,7 +4,6 @@ import '../Styles/Banner.css'
 export default function Banner({item}){
     const backgroundImageStyle = {
         backgroundImage: `url(${item.placeholder_img}?lock=1)`,
-        width: '100%'
       };
     return(
         <Link to={`/news/${item.id}`} className="banner-link-div">

@@ -29,7 +29,8 @@
 
 /* article container styling (default)*/
 .img-div{
-    height: 60%;
+    height: 50%;
+
     grid-area: img;
 }
 
@@ -38,7 +39,6 @@
     text-decoration: none;
     height: 100%;
     color: black;
-    align-content: space-between;
 }
 
 
@@ -46,25 +46,27 @@
 
 /* Text grid area styles */
 .text-container{
-    height: 40%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 .details-div{
-    height: 30%;
+    height: auto;
+
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     align-items: flex-end;
 }
 .title-div{
-    height: 70%;
+    height: auto;
     overflow: hidden;
 }
 
 
 @media only screen and (max-width: 599px){
+
 
     .article-div:nth-child(n+4) .link-div{
         display: grid;
@@ -105,9 +107,6 @@
     .article-div:nth-child(n+6) .link-div .text-container{
         height: 100%;
 
-    }
-    .article-div:nth-child(-n+4){
-        min-height: 20rem;
     }
     .article-div:nth-child(n+6) .link-div .img-div{
         display: none;

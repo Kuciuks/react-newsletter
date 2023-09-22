@@ -38,12 +38,13 @@
     }
     .banner-img{
         box-shadow: -60px 0 50px black inset;
-        width: 50%;
+        width: 60%;
     }
     .banner-details{
         padding-top: 1rem;
         padding-right: 1rem;
-        width: 50%;
+        width: 40%;
         justify-content: space-between;
+    min-height: 21rem;
     }
 }
