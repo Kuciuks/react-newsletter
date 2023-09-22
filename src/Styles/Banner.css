@@ -1,24 +1,49 @@
 .banner-link-div{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .banner-img{
+    background-position: center;
+    background-size: cover;
+    min-height: 21rem;
+    box-shadow: 0 -60px 50px black inset;
+    width: 100%;
 
+    /* mask-image: linear-gradient(180deg, black 0%, black 10%, orange 100%); */
 }
-
 .banner-details{
-    position: relative;
+    background-color: black;
+    color:white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
 }
-
-
-
 
 
 .banner-title{
-
+    font-size: 1rem;
+    text-align: center;
+}
+.banner-title h1{
+    text-decoration: none;
 }
 
-.banner-source{
 
+
+@media only screen and (min-width:599px){
+    .banner-link-div{
+        flex-direction: row;
+    }
+    .banner-img{
+        box-shadow: -60px 0 50px black inset;
+        width: 50%;
+    }
+    .banner-details{
+        padding-top: 1rem;
+        padding-right: 1rem;
+        width: 50%;
+        justify-content: space-between;
+    }
 }
