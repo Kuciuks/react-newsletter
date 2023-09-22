@@ -8,6 +8,10 @@
 }
 
 
+.article-div{
+    background-color: olive;
+}
+
 
 /* Article layout for screens < 500px (default)*/
 .articles-container{

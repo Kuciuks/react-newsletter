@@ -29,9 +29,6 @@ export default function Articles({item}){
                     <div className='source-div'>
                         <p className="source">-{item.source}</p>
                     </div>
-                    <div className='date-div'>
-                        <p className='date'>date</p>
-                    </div>
                 </div>
             </div>
         </Link>
