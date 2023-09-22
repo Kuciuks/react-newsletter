@@ -1,3 +1,24 @@
+.banner-link-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.banner-img{
+
+}
+
+.banner-details{
+    position: relative;
+}
 
 
 
+
+
+.banner-title{
+
+}
+
+.banner-source{
+
+}

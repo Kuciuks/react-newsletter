@@ -1,23 +1,26 @@
+:root{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
 .title{
     margin: 0px;
-    font-size: 2rem;
+    font-size: 4vw;
     margin: 0 10px 0 10px;
-}
-.author{
-    margin: 0px;
-    font-size: 1.5rem;
+    overflow: hidden;
 }
 .source{
-    margin: 15px 10px 15px 10px;
-    font-size: 1.5rem;
+    margin: 15px 10px 10px 10px;
+    font-size: 1rem;
 }
 .date{
-    margin: 15px 10px 15px 10px;
-    font-size: 1.5rem;
+    margin: 15px 10px 10px 10px;
+    font-size: 1rem;
 }
 
 
+.title-div{
+    overflow: hidden;
+}
 
 
 
@@ -37,7 +40,6 @@
 
 .link-div{
     height: 100%;
-    max-width: 37.4375rem;
     background-color: antiquewhite;
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
