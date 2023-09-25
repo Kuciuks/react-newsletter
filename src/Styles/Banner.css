@@ -8,9 +8,7 @@
     background-size: cover;
     min-height: 21rem;
     box-shadow: 0 -60px 50px black inset;
-    width: 100%;
-
-    /* mask-image: linear-gradient(180deg, black 0%, black 10%, orange 100%); */
+    /* width: 100%; */
 }
 .banner-details{
     background-color: black;
@@ -18,7 +16,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 100%;
+    /* width: 100%; */
 }
 
 
