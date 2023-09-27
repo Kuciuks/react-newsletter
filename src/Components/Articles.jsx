@@ -12,7 +12,6 @@ export default function Articles({item}){
         }   
     }
 
-
     return(
         <Link to={`/news/${item.id}`} className='link-div'>
             <div className='img-div'>
