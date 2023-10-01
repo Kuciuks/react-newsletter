@@ -8,7 +8,6 @@ export default function Content(){
 
     const dataArray = useNewsData()
     const useData = useRef(null)
-    const useRequestList = useRef(['article','article','article','article','banner','pizdabol'])
 
 
     useEffect(()=>{
@@ -16,35 +15,34 @@ export default function Content(){
     },[dataArray])
 
 
-    const renderContainers = (reqList) => {
-        reqList.forEach(element => {
+    const renderContainers = (type) => {
             let articleList = []
-            let filteredArr = []
 
-            switch(element){
+            switch(type){
                 case 'article':
-                    console.log(element,' call')
+                    console.log(type,' call')
                     articleList = useData.current.slice(0,9)
-                    
-                    filteredArr = useData.current.splice(9)
+                    useData.current.splice(0,9)
 
-                    useData.current = filteredArr
-
-                    console.log(useData.current.length,' filtered arr')
-
-                break;
+                    return(
+                        articleList.map((item,index)=>(
+                            <div className='article-div' key={index}>
+                                <Articles item={item}/>
+                            </div>
+                        ))
+                    )
 
                 case 'banner':
-                    console.log(element,' call')
+                    console.log(type,' call')
+
                 break;
 
                 default:
-                    console.log('Call name not recognized - ',element, '\n useData length: ',useData.current.length)
+                    console.log('Call name not recognized - ',type, '\n useData length: ',useData.current.length)
             }
-        });
     }
 
-    useData.current === null ? console.log("still loading...") : renderContainers(useRequestList.current)
+    
 
 
     console.log('useData length: ',useData.current)
@@ -54,6 +52,11 @@ export default function Content(){
     return(
         <div className="content-container">
             <div className='articles-container'>
+                {useData.current === null ? <div>Loading...</div> : renderContainers("article")}
+            </div>
+
+            <div className='articles-container'>
+                {useData.current === null ? <div>Loading...</div> : renderContainers("article")}
             </div>
         </div>
     )
