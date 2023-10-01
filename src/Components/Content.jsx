@@ -10,23 +10,21 @@ export default function Content(){
 
     const dataList = useNewsData()
     const useData = useRef(null)
-    let i = 0;
+
     useEffect(()=>{
         useData.current = dataList
     },[dataList])
 
     const renderArticles = (type)=>{
-        console.log(i++)
-        let articleList = []
-        const currentData = [...useData.current]
 
+        let articleList = []
+
+        // console.log(currentData.length,' currentData')
+        // console.log(useData.current.length,' usedata')
 
         switch(type){
             case 'article':
-                articleList = currentData.slice(0,9)
-                console.log(articleList,'article list')
-                useData.current = currentData.splice(9)
-                // console.log(useData.current,'usedata inside')
+                articleList = call(9)
 
                 break;
         }
@@ -38,7 +36,14 @@ export default function Content(){
             ))
         )
     }
-    console.log(useData,'usedata outside')
+
+
+    const call = (num)=>{
+        let arr = []
+        arr = useData.current.splice(0,num);
+        console.log(arr)
+        return arr
+    }
     return(
         <div className='content-container'>
             <div className='articles-container'>
