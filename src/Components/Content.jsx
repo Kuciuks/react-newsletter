@@ -4,58 +4,47 @@ import Articles from "./Articles"
 import Banner from './Banner'
 import { useNewsData } from '../Provider/NewsDataContext';
 
-
-
 export default function Content(){
 
-    const dataList = useNewsData()
-    const useData = useRef(null)
+    const dataArray = useNewsData()
+    const randomArr = [10,14]
 
-    useEffect(()=>{
-        useData.current = dataList
-    },[dataList])
-
-    const renderArticles = (type)=>{
-
-        let articleList = []
-
-        // console.log(currentData.length,' currentData')
-        // console.log(useData.current.length,' usedata')
-
-        switch(type){
-            case 'article':
-                articleList = call(9)
-
-                break;
-        }
-        return(
-            articleList.map((item,index)=>(
-                <div className='article-div' key={index}>
-                    <Articles item={item}/>
-                </div>
-            ))
-        )
+    if(!dataArray){
+        return (<div>Loading..</div>)
     }
-
-
-    const call = (num)=>{
-        let arr = []
-        arr = useData.current.splice(0,num);
-        console.log(arr)
-        return arr
-    }
+    
     return(
-        <div className='content-container'>
-            <div className='articles-container'>
-                {useData.current !== null ? renderArticles('article') : <div>Loading...</div>}
-            </div>
-            <div className='articles-container'>
-                {useData.current !== null ? renderArticles('article') : <div>Loading...</div>}
-            </div>
-            <div className='articles-container'>
-                {useData.current !== null ? renderArticles('article') : <div>Loading...</div>}
-            </div>
+        <div className='articles-container'>
+            {dataArray.map((item,index)=>{
+
+
+                if(index < 9){
+                    return(
+                        <div className='article-div' key={item.id}>
+                            <Articles item={item}/>
+                        </div>
+                    )
+                }
+
+                if(index%randomArr[Math.floor(Math.random()*randomArr.length)] === 0){
+                    return(
+                        <div className='article-div' key={item.id}>
+                            <Banner item={item}/>
+                        </div>
+                    )
+                }
+                return(
+                    <div className='article-div' key={item.id}>
+                        <Articles item={item}/>
+                    </div>
+                )    
+            
+            })
+                
+                
+                }
+                
+
         </div>
     )
-
 }
