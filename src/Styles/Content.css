@@ -23,15 +23,6 @@
 
 
 
-.featured-container{
-    display: grid;
-    grid-template-columns: repeat(1fr, minmax(0,1fr));
-    margin: 0 auto;
-    max-width: 63rem;
-    margin-bottom: 1rem;
-    gap:10px
-}
-
 /* Article layout for screens < 500px (default)*/
 .articles-container{
     margin: 0 auto;

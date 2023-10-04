@@ -1,7 +1,19 @@
 .featured-div{
     width: 100%;
     background-color: antiquewhite;
+    padding:
 }
+
+
+.featured-title-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    font-size: 1.4rem;
+    height: 100%;
+}
+
 
 .featured-container{
     display: grid;
@@ -15,6 +27,7 @@
     'a6';
     margin: 0 auto;
     max-width: 63rem;
+    width: 100%;
     margin-bottom: 1rem;
     gap:10px
 }

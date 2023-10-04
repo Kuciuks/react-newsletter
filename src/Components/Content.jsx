@@ -2,6 +2,7 @@ import '../Styles/Content.css'
 import Articles from "./Articles"
 import Banner from './Banner'
 import Featured from './Featured';
+import Rolling from './Rolling';
 import { useNewsData } from '../Provider/NewsDataContext';
 
 export default function Content(){
@@ -48,6 +49,11 @@ export default function Content(){
                         )
                     }
                 })}
+            </div>
+            <div className='rolling-container'>
+                <div id='rolling' className='rolling-div'>
+                    <Rolling/>
+                </div>
             </div>
         </div>
     )
