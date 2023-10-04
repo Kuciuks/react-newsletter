@@ -16,8 +16,8 @@ export default function Articles({item}){
         <Link to={`/news/${item.id}`} className='link-div'>
             <div className='img-div'>
                 <picture>
-                    <source srcSet={item.placeholder_img + `?lock=1`}/>
-                    <img className='img' src={item.placeholder_img + `?lock=1`} />
+                    <source srcSet={item.placeholder_img}/>
+                    <img className='img' src={item.placeholder_img} />
                 </picture>
             </div>
             <div className='text-container'>

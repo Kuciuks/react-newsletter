@@ -3,20 +3,14 @@ import Articles from "./Articles"
 import Banner from './Banner'
 import Featured from './Featured';
 import Rolling from './Rolling';
-import { useNewsData } from '../Provider/NewsDataContext';
 
-export default function Content(){
+export default function Content({array}){
 
-    const dataArray = useNewsData()
-
-    if(!dataArray){
-        return (<div>Loading..</div>)
-    }
-    
+    console.log(array)
     return(
-        <div className='content-container'>
+        <>
             <div className='articles-container'>
-                {dataArray.map((item,index)=>{
+                {array.map((item,index)=>{
                     if(index < 9){
                         return(
                             <div className='article-div' key={item.id}>
@@ -28,7 +22,7 @@ export default function Content(){
                 }
             </div>
             <div className='banner-container'>
-                {dataArray.map((item,index)=>{
+                {array.map((item,index)=>{
                     if(index >= 9 && index <10){
                         return(
                             <div className='banner-div' key={item.id}>
@@ -40,7 +34,7 @@ export default function Content(){
                 }
             </div>
             <div className='featured-container'>
-                {dataArray.map((item,index)=>{
+                {array.map((item,index)=>{
                     if(index >=10 && index < 16){
                         return(
                             <div className='featured-div' key={item.id}>
@@ -52,9 +46,10 @@ export default function Content(){
             </div>
             <div className='rolling-container'>
                 <div id='rolling' className='rolling-div'>
-                    <Rolling/>
+                    <Rolling text='| LATEST NEWS |'/>
                 </div>
             </div>
-        </div>
+
+        </>
     )
 }

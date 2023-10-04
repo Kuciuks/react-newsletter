@@ -4,7 +4,7 @@ import SelectArticle from "./Components/SelectArticle.jsx"
 import NewsUpload from './Components/NewsUpload.jsx'
 import NewsDataProvider from './Provider/NewsDataContext'
 import SearchBar from './Components/SearchBar.jsx'
-import Content from './Components/Content'
+import ContentManager from './Components/ContentManager'
 
 function App() {
     return(
@@ -12,7 +12,7 @@ function App() {
             <NewsDataProvider>
                 <SearchBar/>
                 <Routes>    
-                    <Route exact path='/' Component={Content}/>
+                    <Route exact path='/' Component={ContentManager}/>
                     <Route path='news/:id' Component={SelectArticle}/>
                     <Route path='news/upload' Component={NewsUpload}/>
                 </Routes>
