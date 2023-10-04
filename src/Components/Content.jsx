@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import '../Styles/Content.css'
 import Articles from "./Articles"
 import Banner from './Banner'
+import Featured from './Featured';
 import { useNewsData } from '../Provider/NewsDataContext';
 
 export default function Content(){
@@ -37,6 +37,17 @@ export default function Content(){
                         }
                     })
                 }
+            </div>
+            <div className='featured-container'>
+                {dataArray.map((item,index)=>{
+                    if(index >=10 && index < 16){
+                        return(
+                            <div className='featured-div' key={item.id}>
+                                <Featured item={item}/>
+                            </div>
+                        )
+                    }
+                })}
             </div>
         </div>
     )
