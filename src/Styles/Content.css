@@ -5,8 +5,9 @@
 }
 
 .article-div{
-    background-color: olive;
+    background-color: #EDD94C;
     height: auto;
+    border: .5rem solid #1B1B1B;
 }
 
 

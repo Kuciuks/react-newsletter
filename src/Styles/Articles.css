@@ -30,7 +30,7 @@
 /* article container styling (default)*/
 .img-div{
     height: 50%;
-
+    border-bottom: .5rem solid #1B1B1B;
     grid-area: img;
 }
 

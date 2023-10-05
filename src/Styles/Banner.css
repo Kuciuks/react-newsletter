@@ -1,5 +1,6 @@
 .banner-link-div{
     display: flex;
+    border: .5rem solid #1B1B1B;
     flex-direction: column;
 }
 .banner-div{
@@ -9,11 +10,11 @@
     background-position: center;
     background-size: cover;
     min-height: 21rem;
-    box-shadow: 0 -60px 50px black inset;
+    box-shadow: 0 -60px 50px #EDD94C inset;
     /* width: 100%; */
 }
 .banner-details{
-    background-color: black;
+    background-color: #EDD94C;
     color:white;
     display: flex;
     align-items: center;
@@ -37,7 +38,7 @@
         flex-direction: row;
     }
     .banner-img{
-        box-shadow: -60px 0 50px black inset;
+        box-shadow: -60px 0 50px #EDD94C inset;
         width: 60%;
     }
     .banner-details{

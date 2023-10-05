@@ -1,14 +1,20 @@
 .featured-div{
-    width: 100%;
-    background-color: antiquewhite;
-    padding:
+    border: .5rem solid #1B1B1B;
+    background-color: #EDD94C;
+    min-height: 5rem;
+}
+
+.featured-link-div{
+    text-decoration: none;
+    color: black
 }
 
 
 .featured-title-div{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-direction: row;
     min-height: 2.5rem;
     font-size: 1.4rem;
     height: 100%;
@@ -29,7 +35,7 @@
     max-width: 63rem;
     width: 100%;
     margin-bottom: 1rem;
-    gap:10px
+    gap: 15px;
 }
 
 
