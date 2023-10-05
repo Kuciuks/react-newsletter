@@ -5,6 +5,7 @@ import NewsUpload from './Components/NewsUpload.jsx'
 import NewsDataProvider from './Provider/NewsDataContext'
 import SearchBar from './Components/SearchBar.jsx'
 import ContentManager from './Components/ContentManager'
+import honeycomb from './assets/irregular-organic.jpg'
 
 function App() {
     return(

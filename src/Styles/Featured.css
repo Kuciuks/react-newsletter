@@ -1,6 +1,6 @@
 .featured-div{
     border: .5rem solid #1B1B1B;
-    background-color: #EDD94C;
+    background-color: #ddd06c;
     min-height: 5rem;
 }
 
@@ -80,11 +80,3 @@
     }
 }
 
-/* Article layout for screens > 1280px */
-@media only screen and (min-width:1280px) {
-    .featured-container{
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    grid-template-areas: 
-        'a1 a2 a3 a4 a5 a6'
-    }
-}

@@ -1,17 +1,22 @@
 .rolling-container{
-    background-color: aqua;
+    background-color: #ddd06c;
     height: 2rem;
-    width: 100%;
+    border: .5rem solid #1B1B1B;
     overflow-x: hidden;
+    margin: 0 auto;
+    max-width: 62rem;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    display: flex;
+    justify-content: center;
 }
 
 .rolling-div{
     display: flex;
     align-items: center;
-    height: 100%;
-
     white-space: nowrap;
-    animation: scroll 10s linear infinite;
+    animation: scroll 15s linear infinite;
 }
 
 .rolling-text{

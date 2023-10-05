@@ -9,12 +9,12 @@
 .banner-img{
     background-position: center;
     background-size: cover;
-    min-height: 21rem;
-    box-shadow: 0 -60px 50px #EDD94C inset;
+    min-height: 19rem;
+    box-shadow: 0 -60px 50px #ddd06c inset;
     /* width: 100%; */
 }
 .banner-details{
-    background-color: #EDD94C;
+    background-color: #ddd06c;
     color:white;
     display: flex;
     align-items: center;
@@ -38,14 +38,13 @@
         flex-direction: row;
     }
     .banner-img{
-        box-shadow: -60px 0 50px #EDD94C inset;
-        width: 60%;
+        box-shadow: -60px 0 50px #ddd06c inset;
+        width: 55%;
     }
     .banner-details{
         padding-top: 1rem;
         padding-right: 1rem;
-        width: 40%;
+        width: 45%;
         justify-content: space-between;
-    min-height: 21rem;
     }
 }
