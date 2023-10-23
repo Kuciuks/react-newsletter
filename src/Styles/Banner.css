@@ -1,6 +1,7 @@
 .banner-link-div{
     display: flex;
-    border: .5rem solid #1B1B1B;
+    border: .3rem solid #1B1B1B;
+    text-decoration: none;
     flex-direction: column;
 }
 .banner-div{
@@ -15,7 +16,7 @@
 }
 .banner-details{
     background-color: #ddd06c;
-    color:white;
+    color:black;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -26,9 +27,6 @@
 .banner-title{
     font-size: 1rem;
     text-align: center;
-}
-.banner-title h1{
-    text-decoration: none;
 }
 
 

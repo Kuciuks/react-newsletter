@@ -45,8 +45,8 @@ export default function Content({array}){
                 })}
             </div>
             <div className='rolling-container'>
-                <div id='rolling' className='rolling-div'>
-                    <Rolling text='| LATEST NEWS |'/>
+                <div className='rolling-div'>
+                    <Rolling/>
                 </div>
             </div>
 

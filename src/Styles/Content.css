@@ -7,7 +7,8 @@
 .article-div{
     background-color: #ddd06c;
     height: auto;
-    border: .5rem solid #1B1B1B;
+    border: .3rem solid #1B1B1B;
+    /* box-shadow: 3px 3px 3px rgb(94, 231, 14); */
 }
 
 
