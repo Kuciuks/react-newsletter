@@ -14,7 +14,7 @@
 }
 
 .select-img{
-    object-fit: contain;
+    object-fit: fill;
 }
 
 

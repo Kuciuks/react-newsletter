@@ -13,7 +13,7 @@ export default function SelectArticle(){
     return(
         <div className="select-container">
             <div className="select-image-container">
-                <img className="img" src={article.placeholder_img + `?lock=1`}/>
+                <img className="select-img" src={article.placeholder_img + `?lock=1`}/>
             </div>
 
             <div className="select-title-container">
