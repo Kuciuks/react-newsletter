@@ -1,8 +1,7 @@
 import { useNewsData } from "../Provider/NewsDataContext"
-import { useEffect, useRef, useState } from "react"
-import Content from "./Content"
+import { useRef, useState } from "react"
 import '../Styles/SearchBar.css'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export default function SearchBar(){
 
@@ -10,28 +9,26 @@ export default function SearchBar(){
     const[news, setNews] = useState(null)
     const inputRef = useRef()
 
-    useEffect(()=>{
-        setNews(newsData)
-    },[newsData])
-
-
+    const navigate = useNavigate()
     const handleClick = () => {
-        
+        navigate('/news/search')// navigating to the search output component
         const searchTerm = inputRef.current.value.trim().toLowerCase()
 
-        const filteredNews = newsData.filter((article) => article.author.toLowerCase().includes(searchTerm))
+        const filteredNews = newsData.filter((article) => article.source.toLowerCase().includes(searchTerm))
 
         setNews(filteredNews)
     }
 
     return(
-        <div className="search-container">
-            <div className="bar-container">
-                <input className="input-field" ref={inputRef} placeholder="Search articles by author"></input>
-                <button className="btn" onClick={handleClick}>Search</button>
-                <Link to='/news/upload'>Upload</Link>
+        <>
+            <div className="search-container">
+                <div className="bar-container">
+                    <input className="input-field" ref={inputRef} placeholder="Search articles by author"></input>
+                    <button className="btn" onClick={handleClick}>Search</button>
+                    <Link to='/news/upload'>Upload</Link>
+                </div>
             </div>
-            {/* <Content newsList={news}/> call another component that renders the search results */}
-        </div>
+        </>
+        
     )
 }

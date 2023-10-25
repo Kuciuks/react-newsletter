@@ -22,15 +22,12 @@ export default function Rolling() {
         }
     },[div])
     if(width !== 0){
-        console.log(width,"start")
 
         while(currentWidth < width){
-            console.log("add")
             currentWidth += 150
             content += ` ${text} `
 
         }
-        console.log(currentWidth,"finished")
         const elements_r_div = Array.from(r_div)
         elements_r_div.forEach(element => {
             element.innerText = content

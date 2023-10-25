@@ -6,7 +6,6 @@ import Rolling from './Rolling';
 
 export default function Content({array}){
 
-    console.log(array)
     return(
         <>
             <div className='articles-container'>

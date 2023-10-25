@@ -1,13 +1,15 @@
 
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { useNewsData } from "../Provider/NewsDataContext"
 import Content from "./Content"
+import SearchResults from "./SearchResults"
 
 
 export default function ContentManager() {
 
     const dataArray = useNewsData()
     const layoutCount = useRef(0)
+    const [display, setDisplay] = useState(false);
 
 
     let articleArray = []
@@ -29,22 +31,21 @@ export default function ContentManager() {
             // console.log('first layout array: ',articles.length)
             start = end; // set the starting count to the end count
             end = end + 16 // increase end count by 16
-                
+            
         }
-
-        console.log(articleArray)
-
-        return(
-            <div className="container">
-                {
-                articleArray.map((item,index)=>(
-                    <div className="content-container" key={index}>
-                        <Content array={item}/>
-                    </div>
-                ))}
-            </div>
-        )
     }
     
-    
+
+    return(
+        <div className="container">
+            {
+            articleArray.map((item,index)=>(
+                //using index instead of item.id because mapping list of arrays instead of individual items
+                //index works fine in this scenario
+                <div className="content-container" key={index}>
+                    <Content array={item}/>
+                </div>
+            ))}
+        </div>
+    )
 }
