@@ -1,13 +1,16 @@
 import { useState } from "react";
+import ResultArticle from "./ResultArticle";
 
 export default function SearchResults({results}) {
 
 
 
   return (
-      <div className="result-container">
-        {results.length !== 0 ? results.map((items,index)=>(
-          <ResultArticle/>
+      <div className="search-result-container">
+        {results.length !== 0 ? results.map((item,index)=>(
+          <div className="result-item" key={item.id}>
+            <ResultArticle article={item}/>
+          </div>
         )):
         <div>Sorry, no results found!</div>
         }

@@ -11,12 +11,15 @@ export default function SearchBar({updateResults}){
 
     const handleClick = () => {
         navigate('/news/search')// navigating to the search output component
-        
+
         const searchTerm = inputRef.current.value.trim().toLowerCase()
 
-        const filteredNews = newsData.filter((article) => article.source.toLowerCase().includes(searchTerm))
-
-        updateResults(filteredNews)
+        if(searchTerm == ""){
+            console.log("search term is empty")
+        }else{
+            const filteredNews = newsData.filter((article) => article.source.toLowerCase().includes(searchTerm))
+            updateResults(filteredNews)
+        }
     }
 
     return(
