@@ -1,0 +1,31 @@
+.result-link-container{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    grid-template-rows: repeat(2, minmax(0,1fr));
+    grid-template-areas: 
+    'pic title'
+    'pic source';
+
+    border: 3px solid black;
+    margin: 10px;
+    width: 55rem;
+    height: 300px;
+}
+
+
+.result-img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.result-pic-div{
+    grid-area: pic;
+}
+.result-title{
+    grid-area: title;
+    text-align: center;
+}
+.result-source{
+    grid-area: source;
+    text-align: center;
+}

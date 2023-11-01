@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ResultArticle from "./ResultArticle";
+import '../Styles/SearchResults.css'
 
 export default function SearchResults({results}) {
 
