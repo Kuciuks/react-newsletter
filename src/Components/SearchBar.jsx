@@ -3,20 +3,20 @@ import { useRef, useState } from "react"
 import '../Styles/SearchBar.css'
 import { Link, useNavigate } from "react-router-dom"
 
-export default function SearchBar(){
+export default function SearchBar({updateResults}){
 
     const newsData = useNewsData()
-    const[news, setNews] = useState(null)
     const inputRef = useRef()
-
     const navigate = useNavigate()
+
     const handleClick = () => {
         navigate('/news/search')// navigating to the search output component
+        
         const searchTerm = inputRef.current.value.trim().toLowerCase()
 
         const filteredNews = newsData.filter((article) => article.source.toLowerCase().includes(searchTerm))
 
-        setNews(filteredNews)
+        updateResults(filteredNews)
     }
 
     return(
