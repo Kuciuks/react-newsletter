@@ -1,0 +1,27 @@
+.form-container{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+form{
+    background-color: #ddd06c;
+    width: 90%;
+    max-width: 43rem;
+    margin: 0 auto;
+    height: 20rem;
+    border: .3rem solid black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+h3{
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2rem 10px;
+}

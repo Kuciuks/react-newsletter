@@ -1,4 +1,5 @@
 import {useForm} from 'react-hook-form'
+import '../Styles/NewsUpload.css'
 
 export default function NewsUpload(){
 
@@ -34,52 +35,56 @@ export default function NewsUpload(){
     }
 
     return(
-        <form onSubmit={handleSubmit(handleUpload)}>
-
-            <label htmlFor='author'>Author (Your full name)</label>
-            <input id='author' {...register("author",{
-                pattern: {
-                    value: /^[A-Za-z]+$/,
-                    message: "Using invalid symbols!"
-                },
-                required: "Required field!"
-            })}/>
-            <p>{errors.author?.message}</p>
-
-
-            <label htmlFor="title">Title</label>
-            <input id="title" {...register("title",{
-                pattern: {
-                    value: /^[A-Za-z0-9\s]+$/,
-                    message: "Using invalid symbols!"
-                },
-                minLength: {
-                    value: 10,
-                    message: "The title must be longer than 10 characters!"
-                },
-                required: "Required field!"
-            })}/>
-            <p>{errors.title?.message}</p>
+        <div className='form-container'>
+            <h3>Here you can upload a story you would like to share with others!</h3>
+            <form onSubmit={handleSubmit(handleUpload)}>
+                <label htmlFor='author'>Author (Your full name)</label>
+                <input id='author' autoFocus {...register("author",{
+                    pattern: {
+                        value: /^[A-Za-z]+$/,
+                        message: "Using invalid symbols!"
+                    },
+                    required: "Required field!"
+                })}/>
+                <p>{errors.author?.message}</p>
 
 
-            <label htmlFor='article'>Write your article here:</label>
-            <textarea id='article' {...register("article",{
-                minLength: {
-                    value: 200,
-                    message: "The article must be longer than 200 characters!"
-                },
-                required: "Required field!"
-            })}/>
-            <p>{errors.article?.message}</p>
+                <label htmlFor="title">Title</label>
+                <input id="title" {...register("title",{
+                    pattern: {
+                        value: /^[A-Za-z0-9\s]+$/,
+                        message: "Using invalid symbols!"
+                    },
+                    minLength: {
+                        value: 10,
+                        message: "The title must be longer than 10 characters!"
+                    },
+                    required: "Required field!"
+                })}/>
+                <p>{errors.title?.message}</p>
 
-{/* 
-            <label htmlFor='image'>Upload picture</label>
-            <input id="image" type='file' {...register("image",{
-                required: "Required field!"
-            })}/>
-            <p>{errors.file?.message}</p> */}
 
-            <button type='submit'>Submit</button>
-        </form>
+                <label htmlFor='article'>Write your article here:</label>
+                <textarea id='article' {...register("article",{
+                    minLength: {
+                        value: 200,
+                        message: "The article must be longer than 200 characters!"
+                    },
+                    required: "Required field!"
+                })}/>
+                <p>{errors.article?.message}</p>
+
+                {/* 
+                <label htmlFor='image'>Upload picture</label>
+                <input id="image" type='file' {...register("image",{
+                    required: "Required field!"
+                })}/>
+                <p>{errors.file?.message}</p> */}
+
+                <button type='submit'>Submit</button>
+                </form>
+            <h3>The community is eagerly awaiting your new story!</h3>
+
+        </div>
     )   
 }
