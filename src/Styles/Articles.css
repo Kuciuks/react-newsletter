@@ -78,6 +78,7 @@
     }
     .article-div:nth-child(n+4) .link-div .img-div {
         height: 100%;
+        border-right: .3rem solid #1B1B1B;
     }
 }
 

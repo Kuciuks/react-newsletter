@@ -10,7 +10,7 @@
 .banner-img{
     background-position: center;
     background-size: cover;
-    min-height: 19rem;
+    min-height: 15rem;
     box-shadow: 0 -60px 50px #ddd06c inset;
     /* width: 100%; */
 }
@@ -23,13 +23,10 @@
     /* width: 100%; */
 }
 
-
 .banner-title{
     font-size: 1rem;
     text-align: center;
 }
-
-
 
 @media only screen and (min-width:599px){
     .banner-link-div{
