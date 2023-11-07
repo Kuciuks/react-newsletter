@@ -4,3 +4,8 @@
     align-items: center;
     flex-direction: column;
 }
+
+.result-item{
+    max-width: 63rem;
+    margin: 0 auto;
+}
