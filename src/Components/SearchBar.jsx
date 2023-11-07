@@ -16,6 +16,7 @@ export default function SearchBar({updateResults}){
 
         if(searchTerm == ""){
             console.log("search term is empty")
+            navigate('/')
         }else{
             const filteredNews = newsData.filter((article) => article.source.toLowerCase().includes(searchTerm))
             updateResults(filteredNews)
@@ -23,15 +24,13 @@ export default function SearchBar({updateResults}){
     }
 
     return(
-        <>
-            <div className="search-container">
-                <div className="bar-container">
-                    <input className="input-field" ref={inputRef} placeholder="Search articles by author"></input>
-                    <button className="btn" onClick={handleClick}>Search</button>
-                    <Link to='/news/upload'>Upload</Link>
-                </div>
+        <div className="search-container">
+            <div className="bar-container">
+                <input className="input-field" ref={inputRef} placeholder="Search articles by author"></input>
+                <button className="btn" onClick={handleClick}>Search</button>
+                <Link to='/news/upload'>Upload</Link>
             </div>
-        </>
+        </div>
         
     )
 }
